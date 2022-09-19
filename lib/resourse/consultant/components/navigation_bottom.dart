@@ -1,0 +1,235 @@
+import 'package:astrology/resourse/Home/home.dart';
+import 'package:flutter/material.dart';
+
+class BottomBarPysc extends StatelessWidget {
+  String selected = "";
+  Color colorSelected = Colors.white;
+  Color colorNormal = Color.fromRGBO(87, 79, 79, 1);
+  BottomBarPysc({required this.selected});
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: EdgeInsets.only(top: 5, bottom: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          if (selected == "home")
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return HomeScreen();
+                  },
+                ));
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/home.png",
+                    color: Colors.white,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Home",
+                    style: TextStyle(fontSize: 12, color: Colors.white),
+                  )
+                ],
+              ),
+            )
+          else
+          // GestureDetector(
+          //   // onTap: () => spaController.getSpa(),
+          //   child: Column(
+          //     mainAxisSize: MainAxisSize.min,
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     children: [
+          //       Image.asset(
+          //         "assets/icons/home.png",
+          //         color: Colors.black45,
+          //         width: size.width * 0.09,
+          //       ),
+          //       Text(
+          //         "Home",
+          //         style: TextStyle(
+          //             fontSize: 12, color: Colors.black45),
+          //       )
+          //     ],
+          //   ),
+          // )
+          // ,
+          //=============================================================APPOINTMENT
+          if (selected == "appointment")
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    // return MainScreen();
+                    return HomeScreen();
+                  },
+                ));
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/appointment.png",
+                    color: Colors.white,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Appointment",
+                    style: TextStyle(fontSize: 12, color: Colors.white),
+                  )
+                ],
+              ),
+            )
+          else
+            GestureDetector(
+              // onTap: () => appointmentController.getBookingServices(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/appointment.png",
+                    color: Colors.black45,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Appointment",
+                    style: TextStyle(fontSize: 12, color: Colors.black45),
+                  )
+                ],
+              ),
+            ),
+          //=============================================================SEARCH
+          if (selected == "search")
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return HomeScreen();
+                    // return SearchScreen(searchKey: "");
+                  },
+                ));
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/searchBot.png",
+                    color: Colors.white,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Search",
+                    style: TextStyle(fontSize: 12, color: Colors.white),
+                  )
+                ],
+              ),
+            )
+          else
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return AppointmentScreen(finished: true);
+                // },));
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/searchBot.png",
+                    color: Colors.black45,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Search",
+                    style: TextStyle(fontSize: 12, color: Colors.black45),
+                  )
+                ],
+              ),
+            ),
+          // //=============================================================TREATMENT
+          // if(selected == "treatment")
+          //   IconButton(
+          //     onPressed: () {
+          //       Navigator.push(context, MaterialPageRoute(
+          //         builder: (context) {
+          //           return MainScreen();
+          //         },
+          //       ));
+          //     },
+          //     icon: Image.asset("assets/icons/treatment.png",color: colorSelected,),
+          //     iconSize: size.width * 0.09,
+          //   )
+          // else
+          //   IconButton(
+          //     onPressed: () {
+          //       Navigator.push(context, MaterialPageRoute(
+          //         builder: (context) {
+          //           return MainScreen();
+          //         },
+          //       ));
+          //     },
+          //     icon: Image.asset("assets/icons/treatment.png", color: colorNormal,),
+          //     iconSize: size.width * 0.09,
+          //   )
+          // ,
+          //=============================================================
+          if (selected == "Logout")
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    // return MainScreen();
+                    return HomeScreen();
+                  },
+                ));
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/profile.png",
+                    color: Colors.white,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Logout",
+                    style: TextStyle(fontSize: 12, color: Colors.white),
+                  )
+                ],
+              ),
+            )
+          else
+            GestureDetector(
+              // onTap: () => loginController.logout(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/profile.png",
+                    color: Colors.black45,
+                    width: size.width * 0.09,
+                  ),
+                  Text(
+                    "Logout",
+                    style: TextStyle(fontSize: 12, color: Colors.black45),
+                  )
+                ],
+              ),
+            )
+        ],
+      ),
+    );
+  }
+}
