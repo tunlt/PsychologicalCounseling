@@ -1,4 +1,4 @@
-# astrology
+# Psychological
 
 A new Flutter project.
 
