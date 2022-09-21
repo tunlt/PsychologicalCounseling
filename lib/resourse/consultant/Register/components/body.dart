@@ -1,11 +1,11 @@
 import 'package:astrology/resourse/Login&register/login.dart';
+import 'package:astrology/resourse/consultant/controller/register_consultant.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
 import 'package:astrology/resourse/consultant/common/themhelper.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-// import 'package:spa_booking/controller/register.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -24,11 +24,12 @@ class _BodyState extends State<Body> {
   TextEditingController addressController = TextEditingController();
   TextEditingController dobController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  TextEditingController? genderController = TextEditingController();
+  // var genderController = "male";
 
-  // final RegisterController _controller = Get.find<RegisterController>();
+  final RegisterController _controller = Get.find<RegisterController>();
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
@@ -104,7 +105,6 @@ class _BodyState extends State<Body> {
                       .textInputDecoration("Địa Chỉ", "Nhập vào địa chỉ... "),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: TextField(
@@ -130,12 +130,6 @@ class _BodyState extends State<Body> {
                   ),
                 ]),
               ),
-              //   RoundedButton(
-              //   text: "Create Account",
-              //   color: (Colors.red[300])!,
-              // press: ()=> _controller.addRegister(emailController,fullnameController,usernameController,passwordController,addressController,dobController,phoneController),
-              //   textColor: Colors.white,
-              // ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(130, 0, 0, 0),
                 child: ElevatedButton(
@@ -153,7 +147,15 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   child: Text('Tạo tài khoản'),
-                  onPressed: () {},
+                  onPressed: () => _controller.addRegister(
+                      emailController,
+                      fullnameController,
+                      usernameController,
+                      passwordController,
+                      addressController,
+                      genderController,
+                      dobController,
+                      phoneController),
                 ),
               ),
               Padding(

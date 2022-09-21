@@ -330,6 +330,7 @@ class MyNewsDetail extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     String formatDate =
         DateFormat.yMMMd().format(DateTime.parse(item.generateDate));
+
     return Scaffold(
       backgroundColor: Color.fromRGBO(109, 112, 122, 1),
       extendBodyBehindAppBar: true,

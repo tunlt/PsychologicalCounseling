@@ -46,7 +46,7 @@ class _BodyVerifyState extends State<BodyVerify> {
                 height: 24,
               ),
               Text(
-                'Verification',
+                'Xác Minh Danh Tính',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -56,7 +56,7 @@ class _BodyVerifyState extends State<BodyVerify> {
                 height: 10,
               ),
               Text(
-                "Enter your OTP code number",
+                "Nhập mã code của bạn",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -79,10 +79,10 @@ class _BodyVerifyState extends State<BodyVerify> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _textFieldOTP(first: true, last: false),
-                        _textFieldOTP(first: false, last: false),
-                        _textFieldOTP(first: false, last: false),
-                        _textFieldOTP(first: false, last: true),
+                        _textFieldNum(first: true, last: false),
+                        _textFieldNum(first: false, last: false),
+                        _textFieldNum(first: false, last: false),
+                        _textFieldNum(first: false, last: true),
                       ],
                     ),
                     SizedBox(
@@ -107,7 +107,7 @@ class _BodyVerifyState extends State<BodyVerify> {
                         child: Padding(
                           padding: EdgeInsets.all(14.0),
                           child: Text(
-                            'Verify',
+                            'Gửi',
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
@@ -120,7 +120,7 @@ class _BodyVerifyState extends State<BodyVerify> {
                 height: 18,
               ),
               Text(
-                "Didn't you receive any code?",
+                "Bạn chưa nhận được mã code",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -132,7 +132,7 @@ class _BodyVerifyState extends State<BodyVerify> {
                 height: 18,
               ),
               Text(
-                "Resend New Code",
+                "Gửi lại",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -147,7 +147,7 @@ class _BodyVerifyState extends State<BodyVerify> {
     );
   }
 
-  Widget _textFieldOTP({bool? first, last}) {
+  Widget _textFieldNum({bool? first, last}) {
     return Container(
       height: 65,
       child: AspectRatio(

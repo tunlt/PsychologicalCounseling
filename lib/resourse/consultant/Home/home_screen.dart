@@ -1,16 +1,19 @@
-// import 'package:astrology/resourse/consultant/components/navigation_bottom.dart';
+import 'package:astrology/resourse/consultant/Home/components/body.dart';
+import 'package:flutter/material.dart';
 
-// class MainScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-//     return Scaffold(
-//       appBar: TopBar.getAppBarLocation(size, context),
-//       body: Body(),
-//       bottomNavigationBar: BottomBarPysc(
-//         color: Colors.red[100],
-//         child: BottomBarSpaApp(selected: "home",),
-//       ),
-//     );
-//   }
-// }
+class HomeScreenConsultant extends StatefulWidget {
+  const HomeScreenConsultant({Key? key}) : super(key: key);
+
+  @override
+  // _HomeScreenScreenState createState() => _HomeScreenScreenState();
+  _HomeScreenConsultantState createState() => _HomeScreenConsultantState();
+}
+
+class _HomeScreenConsultantState extends State<HomeScreenConsultant> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Body(),
+    );
+  }
+}

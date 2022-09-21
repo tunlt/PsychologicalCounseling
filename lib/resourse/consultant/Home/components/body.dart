@@ -1,212 +1,160 @@
-// import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:flutter/material.dart';
+import 'package:astrology/resourse/consultant/components/bottombar_consultant.dart';
+import 'package:astrology/resourse/consultant/components/navigation_bottom.dart';
+import 'package:flutter/material.dart';
 
+class Body extends StatefulWidget {
+  const Body({super.key});
 
-// import 'package:get/get.dart';
+  @override
+  State<Body> createState() => _BodyState();
+}
 
-// class Body extends StatelessWidget {
-//   // final SpaController _spaController = Get.find<SpaController>();
-//   //============color
-
-//   Color colorTitle = Color.fromRGBO(190, 62, 62, 1);
-//   @override
-//   Widget build(BuildContext context) {
-//     // ListSpa list=new ListSpa();
-//     // List<Service> byDistance=list.getByDistance();
-//     // List<Service> byRate=list.getByRate();
-//     // List<Service> bySale=list.getBySale();
-
-//     Size size = MediaQuery.of(context).size;
-
-//     return SingleChildScrollView(
-//       scrollDirection: Axis.vertical,
-//       child: Stack(
-//         children: [
-//           Column(
-//             children: [
-//               //=====================================================================================================SEARCH
-//               // SearchBar(searchText: "Search"),
-//               //=================================================================================IMAGE
-//               // Container(
-//               //   child: CarouselSlider(
-//               //     options: CarouselOptions(
-//               //       autoPlay: true,
-//               //       aspectRatio: 2.0,
-//               //     ),
-//               //     items: [
-//               //       Image.asset(
-//               //         "assets/images/spa4.png",
-//               //         width: size.width * 1,
-//               //       ),
-//               //       Image.asset("assets/images/spa2.png",
-//               //           width: size.width * 1),
-//               //       Image.asset("assets/images/spa3.png",
-//               //           width: size.width * 1),
-//               //     ],
-//               //   ),
-//               // ),
-//               //=====================================================================================================ICON function
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                 children: [
-//                   IconButton(
-//                     onPressed: () {
-//                       Navigator.push(context, MaterialPageRoute(
-//                         builder: (context) {
-//                           return SearchScreen(searchKey: "#Facial");
-//                         },
-//                       ));
-//                     },
-//                     icon: Image.asset("assets/icons/facial.png"),
-//                     iconSize: size.width * 0.2,
-//                   ),
-//                   IconButton(
-//                     onPressed: () {
-//                       Navigator.push(context, MaterialPageRoute(
-//                         builder: (context) {
-//                           return SearchScreen(searchKey: "#Massage");
-//                         },
-//                       ));
-//                     },
-//                     icon: Image.asset("assets/icons/massage.png"),
-//                     iconSize: size.width * 0.2,
-//                   ),
-//                   IconButton(
-//                     onPressed: () {
-//                       Navigator.push(context, MaterialPageRoute(
-//                         builder: (context) {
-//                           return SearchScreen(searchKey: "#Sauna");
-//                         },
-//                       ));
-//                     },
-//                     icon: Image.asset("assets/icons/sauna.png"),
-//                     iconSize: size.width * 0.2,
-//                   ),
-//                   IconButton(
-//                     onPressed: () {
-//                       Navigator.push(context, MaterialPageRoute(
-//                         builder: (context) {
-//                           return SearchScreen(searchKey: "#HotStoneTherapy");
-//                         },
-//                       ));
-//                     },
-//                     icon: Image.asset("assets/icons/hotStoneTherapy.png"),
-//                     iconSize: size.width * 0.2,
-//                   )
-//                 ],
-//               ),
-//               Padding(
-//                   padding: EdgeInsets.only(top: 15, left: 10, right: 10),
-//                   child: Column(children: <Widget>[
-//                     //=========================================================================================================NEAR SPA
-//                     Padding(
-//                       padding: EdgeInsets.only(bottom: 15),
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           Text(
-//                             "Near by Spa",
-//                             style: TextStyle(
-//                                 color: ColorConstants.textColorBold,
-//                                 fontSize: 18,
-//                                 fontWeight: FontWeight.bold,
-//                                 fontStyle: FontStyle.italic),
-//                           ),
-//                           GestureDetector(
-//                             onTap: () {
-//                               Navigator.push(context, MaterialPageRoute(
-//                                 builder: (context) {
-//                                   return SearchScreen(searchKey: "#SpaNearBy");
-//                                 },
-//                               ));
-//                             },
-//                             child: Text(
-//                               "See more",
-//                               style: TextStyle(
-//                                   color: Colors.red[200],
-//                                   fontSize: 17,
-//                                   fontStyle: FontStyle.italic),
-//                             ),
-//                           )
-//                         ],
-//                       ),
-//                     ),
-//                     // Container(
-//                     //   padding: EdgeInsets.only(bottom: 10, top: 20),
-//                     //   height: MediaQuery.of(context).size.height * 0.40,
-//                     //   child: GetBuilder<SpaController>(
-//                     //     builder: (controller) => (controller.isLoading.isTrue)
-//                     //         ? const Center(child: CircularProgressIndicator())
-//                     //         : controller.listSpa.isEmpty
-//                     //             ? const Center(child: Text('Không có spa nào!'))
-//                     //             : ListView.builder(
-//                     //                 shrinkWrap: true,
-//                     //                 scrollDirection: Axis.horizontal,
-//                     //                 itemBuilder: (ctx, i) =>
-//                     //                     BlockSpa(controller.listSpa[i]),
-//                     //                 itemCount: controller.listSpa.length,
-//                     //               ),
-//                     //   ),
-//                     // ),
-//                     //==================================================HIGH RATING
-//                     // Container(
-//                     //   padding: EdgeInsets.only(top: 10, bottom: 15),
-//                     //   child: Row(
-//                     //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                     //     children: [
-//                     //       Text(
-//                     //         "List services",
-//                     //         style: TextStyle(
-//                     //             color: ColorConstants.textColorBold,
-//                     //             fontSize: 18,
-//                     //             fontWeight: FontWeight.bold,
-//                     //             fontStyle: FontStyle.italic),
-//                     //       ),
-//                     //       GestureDetector(
-//                     //         onTap: () {
-//                     //           Navigator.push(context, MaterialPageRoute(
-//                     //             builder: (context) {
-//                     //               return SearchScreen(searchKey: "#HighRating");
-//                     //             },
-//                     //           ));
-//                     //         },
-//                     //         child: Text(
-//                     //           "See more",
-//                     //           style: TextStyle(
-//                     //               color: Colors.red[200],
-//                     //               fontSize: 17,
-//                     //               fontStyle: FontStyle.italic),
-//                     //         ),
-//                     //       )
-//                     //     ],
-//                     //   ),
-//                     // ),
-//                     // Container(
-//                     //   padding: const EdgeInsets.all(8),
-//                     //   height: MediaQuery.of(context).size.height * 0.45,
-//                     //   child: GetBuilder<ServicesController>(
-//                     //     builder: (controller) => (controller.isLoading.isTrue)
-//                     //         ? const Center(child: CircularProgressIndicator())
-//                     //         : controller.listServices.isEmpty
-//                     //             ? const Center(
-//                     //                 child: Text('Không có dịch vụ nào!'))
-//                     //             : ListView.builder(
-//                     //                 shrinkWrap: true,
-//                     //                 scrollDirection: Axis.horizontal,
-//                     //                 itemBuilder: (ctx, i) => BlockServices(
-//                     //                     controller.listServices[i]),
-//                     //                 itemCount: controller.listServices.length,
-//                     //               ),
-//                     //   ),
-//                     // ),
-//                   ])),
-//               SizedBox(
-//                 height: 20,
-//               )
-//             ],
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+class _BodyState extends State<Body> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        shadowColor: Colors.purple[600],
+        backgroundColor: Colors.purple[200],
+        leading: Container(
+            height: 100,
+            width: 100,
+            child: Image.asset('assets/zodiac/logo1.png')),
+        actions: [],
+      ),
+      body: Container(
+        color: Colors.purple,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Center(
+                  child: Container(
+                      height: 170,
+                      width: 170,
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            'https://upanh123.com/wp-content/uploads/2020/11/hinh-anh-anime-chibi-girl5.jpg'),
+                        backgroundColor: Colors.purple[50],
+                      )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: new LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 238, 148, 218),
+                                Color.fromARGB(255, 255, 255, 255)
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter),
+                        ),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.live_tv_outlined, color: Colors.red),
+                          iconSize: 75,
+                        ),
+                      ),
+                      Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: new LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 48, 97, 233),
+                                Color.fromARGB(255, 255, 255, 255)
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter),
+                        ),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.chat_bubble_outline_sharp,
+                            color: Colors.white,
+                          ),
+                          iconSize: 75,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 0),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: new LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 238, 148, 218),
+                                Color.fromARGB(255, 255, 255, 255)
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter),
+                        ),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.shopify_outlined, color: Colors.red),
+                          iconSize: 75,
+                        ),
+                      ),
+                      Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: new LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 238, 148, 218),
+                                Color.fromARGB(255, 255, 255, 255)
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter),
+                        ),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.calendar_today,
+                            color: Color.fromARGB(255, 24, 228, 17),
+                          ),
+                          iconSize: 75,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomBarPsycApp(),
+    );
+  }
+}
