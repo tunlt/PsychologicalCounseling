@@ -25,6 +25,7 @@ class _BodyState extends State<Body> {
   TextEditingController dobController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController? genderController = TextEditingController();
+
   // var genderController = "male";
 
   final RegisterController _controller = Get.find<RegisterController>();

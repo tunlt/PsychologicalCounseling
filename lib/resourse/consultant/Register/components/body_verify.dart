@@ -1,4 +1,6 @@
+import 'package:astrology/resourse/consultant/controller/verifyemail.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BodyVerify extends StatefulWidget {
   BodyVerify({Key? key}) : super(key: key);
@@ -9,7 +11,22 @@ class BodyVerify extends StatefulWidget {
 
 class _BodyVerifyState extends State<BodyVerify> {
   @override
+  TextEditingController num1 = TextEditingController();
+  TextEditingController num2 = TextEditingController();
+  TextEditingController num3 = TextEditingController();
+  TextEditingController num4 = TextEditingController();
+
+  final VerifyEmailController _controller = Get.find<VerifyEmailController>();
   Widget build(BuildContext context) {
+    void changevalue(bool? last, first, String value) {
+      if (value.length == 1 && last == false) {
+        FocusScope.of(context).nextFocus();
+      }
+      if (value.length == 0 && first == false) {
+        FocusScope.of(context).previousFocus();
+      }
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xfff7f6fb),
@@ -79,10 +96,130 @@ class _BodyVerifyState extends State<BodyVerify> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _textFieldNum(first: true, last: false),
-                        _textFieldNum(first: false, last: false),
-                        _textFieldNum(first: false, last: false),
-                        _textFieldNum(first: false, last: true),
+                        Container(
+                          height: 65,
+                          child: AspectRatio(
+                            aspectRatio: 1.0,
+                            child: TextField(
+                              autofocus: true,
+                              onChanged: (value) {
+                                changevalue(true, false, value);
+                              },
+                              controller: num1,
+                              showCursor: false,
+                              readOnly: false,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.bold),
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              decoration: InputDecoration(
+                                counter: Offstage(),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.black12),
+                                    borderRadius: BorderRadius.circular(12)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.purple),
+                                    borderRadius: BorderRadius.circular(12)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 65,
+                          child: AspectRatio(
+                            aspectRatio: 1.0,
+                            child: TextField(
+                              autofocus: true,
+                              onChanged: (value) {
+                                changevalue(false, false, value);
+                              },
+                              controller: num2,
+                              showCursor: false,
+                              readOnly: false,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.bold),
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              decoration: InputDecoration(
+                                counter: Offstage(),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.black12),
+                                    borderRadius: BorderRadius.circular(12)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.purple),
+                                    borderRadius: BorderRadius.circular(12)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 65,
+                          child: AspectRatio(
+                            aspectRatio: 1.0,
+                            child: TextField(
+                              autofocus: true,
+                              onChanged: (value) {
+                                changevalue(false, false, value);
+                              },
+                              controller: num3,
+                              showCursor: false,
+                              readOnly: false,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.bold),
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              decoration: InputDecoration(
+                                counter: Offstage(),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.black12),
+                                    borderRadius: BorderRadius.circular(12)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.purple),
+                                    borderRadius: BorderRadius.circular(12)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 65,
+                          child: AspectRatio(
+                            aspectRatio: 1.0,
+                            child: TextField(
+                              autofocus: true,
+                              onChanged: (value) {
+                                changevalue(false, true, value);
+                              },
+                              controller: num4,
+                              showCursor: false,
+                              readOnly: false,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.bold),
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              decoration: InputDecoration(
+                                counter: Offstage(),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.black12),
+                                    borderRadius: BorderRadius.circular(12)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        width: 1.5, color: Colors.purple),
+                                    borderRadius: BorderRadius.circular(12)),
+                              ),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -91,7 +228,8 @@ class _BodyVerifyState extends State<BodyVerify> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            _controller.verifyEmail(num1, num2, num3, num4),
                         style: ButtonStyle(
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),

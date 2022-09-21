@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterController extends GetxController {
   Future<void> addRegister(
@@ -17,9 +18,12 @@ class RegisterController extends GetxController {
       genderController,
       dobController,
       phoneController) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String email = emailController.text;
+    prefs.setString('emailConsultant', email);
     // final String? token = prefs.getString('token');
     final String? token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjpbIjciLCJhZG1pbnBzeWMiLCJhZG1pbjEyNDUiXSwiZXhwIjoxNjYzODYyOTc5LCJpc3MiOiJUb2tlbkF1dGhieVRhIiwiYXVkIjoiVG9rZW5BdXRoYnlUYSJ9.nTzb6BPpe9JUC6_VG0lpXSX1WmzeY0I6x7k1sU-DmPM";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjpbIjciLCJhZG1pbnBzeWMiLCJhZG1pbjEyNDUiXSwiZXhwIjoxNjYzODc3NDg4LCJpc3MiOiJUb2tlbkF1dGhieVRhIiwiYXVkIjoiVG9rZW5BdXRoYnlUYSJ9.j73vTJQlwZvqX6RRPMObpBMCiGirlww1aHar9zgVNW0";
     try {
       String body = json.encode({
         'userName': usernameController.text,
