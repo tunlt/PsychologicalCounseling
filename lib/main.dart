@@ -1,4 +1,5 @@
 import 'package:astrology/resourse/consultant/Home/home_screen.dart';
+import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/Register/veriify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       // home: RegisterScreen(),
-      initialRoute: "/register_screen",
+      initialRoute: "/profile_screen",
       getPages: [
         GetPage(
           name: '/register_screen',
@@ -28,6 +29,10 @@ void main() async {
         GetPage(
             name: '/verify_email',
             page: () => VerifyEmailScreen(),
+            binding: Binding()),
+        GetPage(
+            name: '/profile_screen',
+            page: () => ProfileConsultantScreen(),
             binding: Binding()),
       ],
     ),
