@@ -1,3 +1,4 @@
+import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/controller/register_consultant.dart';
 import 'package:astrology/resourse/consultant/controller/verifyemail.dart';
@@ -9,5 +10,6 @@ class Binding implements Bindings {
     Get.lazyPut(() => RegisterController());
     Get.lazyPut(() => VerifyEmailController());
     Get.lazyPut(() => ProfileConsultantScreen());
+    Get.lazyPut(() => EditProfileConsultantScreen());
   }
 }

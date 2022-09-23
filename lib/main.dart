@@ -1,4 +1,5 @@
 import 'package:astrology/resourse/consultant/Home/home_screen.dart';
+import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/Register/veriify_email.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,10 @@ void main() async {
         GetPage(
             name: '/profile_screen',
             page: () => ProfileConsultantScreen(),
+            binding: Binding()),
+        GetPage(
+            name: '/editprofile_screen',
+            page: () => EditProfileConsultantScreen(),
             binding: Binding()),
       ],
     ),
