@@ -53,6 +53,8 @@ dependencies:
   jwt_decode: ^0.3.1
   fluttertoast: ^8.0.9
   alert: ^2.0.1
+  agora_rtc_engine: ^5.3.0
+  permission_handler: ^10.0.1
 
 dev_dependencies:
   flutter_test:

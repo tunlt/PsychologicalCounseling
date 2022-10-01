@@ -1,4 +1,5 @@
 import 'package:astrology/resourse/consultant/Profile/conponents/body.dart';
+import 'package:astrology/resourse/consultant/components/bottombar_consultant.dart';
 import 'package:flutter/material.dart';
 
 class ProfileConsultantScreen extends StatefulWidget {
@@ -12,6 +13,9 @@ class ProfileConsultantScreen extends StatefulWidget {
 class _ProfileConsultantScreenState extends State<ProfileConsultantScreen> {
   @override
   Widget build(BuildContext context) {
-    return ProfileConsultant();
+    return Scaffold(
+      body: ProfileConsultant(),
+      bottomNavigationBar: BottomBarPsycApp(selected: "profile"),
+    );
   }
 }

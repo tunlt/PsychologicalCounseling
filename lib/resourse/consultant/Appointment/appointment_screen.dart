@@ -1,3 +1,4 @@
+import 'package:astrology/resourse/consultant/components/bottombar_consultant.dart';
 import 'package:flutter/material.dart';
 import 'package:astrology/resourse/consultant/Appointment/components/body_dart.dart';
 
@@ -12,8 +13,9 @@ class AppointmentScreen extends StatefulWidget {
 class _AppontmentScreenState extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Body(),
+      bottomNavigationBar: BottomBarPsycApp(selected: "appointment"),
     );
   }
 }

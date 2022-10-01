@@ -1,4 +1,5 @@
 import 'package:astrology/resourse/consultant/Home/components/body.dart';
+import 'package:astrology/resourse/consultant/components/bottombar_consultant.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenConsultant extends StatefulWidget {
@@ -12,8 +13,9 @@ class HomeScreenConsultant extends StatefulWidget {
 class _HomeScreenConsultantState extends State<HomeScreenConsultant> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Body(),
+      bottomNavigationBar: BottomBarPsycApp(selected: "home"),
     );
   }
 }

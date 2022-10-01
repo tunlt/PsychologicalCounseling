@@ -2,6 +2,8 @@ import 'package:astrology/resourse/consultant/Home/home_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/Register/veriify_email.dart';
+import 'package:astrology/resourse/consultant/callconsultant/call_screen.dart';
+import 'package:astrology/resourse/consultant/callconsultant/components/bodyCall.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +18,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       // home: RegisterScreen(),
-      initialRoute: "/profile_screen",
+      initialRoute: "/home_screen",
       getPages: [
         GetPage(
           name: '/register_screen',
@@ -39,6 +41,9 @@ void main() async {
             name: '/editprofile_screen',
             page: () => EditProfileConsultantScreen(),
             binding: Binding()),
+        GetPage(
+            name: '/call_screen', page: () => CallScreen(), binding: Binding()),
+        GetPage(name: '/bodyCall', page: () => BodyCall(), binding: Binding()),
       ],
     ),
   );

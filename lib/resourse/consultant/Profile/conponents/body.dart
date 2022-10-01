@@ -14,16 +14,17 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              // Do something.
-            }),
         title: Text("Tài khoản của tôi"),
         backgroundColor: Colors.purple[200],
       ),
+      // appBar: AppBar(
+      //   title: Text("Tài khoản của tôi"),
+      //   backgroundColor: Colors.purple[200],
+      //   leading: null,
+      // ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.symmetric(vertical: 25),
@@ -38,33 +39,12 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                       backgroundImage: NetworkImage(
                           "https://upanh123.com/wp-content/uploads/2020/11/hinh-anh-anime-chibi-girl5.jpg"),
                     ),
-                    Positioned(
-                      right: -16,
-                      bottom: 0,
-                      child: SizedBox(
-                        height: 46,
-                        width: 46,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              side: BorderSide(color: Colors.white),
-                            ),
-                            primary: Colors.purple,
-                            backgroundColor: Color(0xFFF5F6F9),
-                          ),
-                          onPressed: () {},
-                          child: Icon(Icons.edit),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 23),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.purple,
@@ -86,9 +66,8 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                 ),
               ),
             ),
-            SizedBox(height: 23),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.purple,
@@ -108,9 +87,8 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                 ),
               ),
             ),
-            SizedBox(height: 23),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.purple,
@@ -130,9 +108,8 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                 ),
               ),
             ),
-            SizedBox(height: 23),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.purple,
@@ -152,9 +129,8 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                 ),
               ),
             ),
-            SizedBox(height: 23),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.purple,

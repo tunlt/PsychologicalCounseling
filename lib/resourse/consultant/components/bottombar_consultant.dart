@@ -1,12 +1,14 @@
 import 'package:astrology/resourse/consultant/Appointment/appointment_screen.dart';
 import 'package:astrology/resourse/consultant/Home/home_screen.dart';
+import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BottomBarPsycApp extends StatelessWidget {
   String selected = "";
   Color colorSelected = Colors.white;
   Color colorNormal = Color.fromRGBO(87, 79, 79, 1);
-  // BottomBarSpaApp({required this.selected});
+  BottomBarPsycApp({required this.selected});
   // final AppointmentController appointmentController =
   //     Get.find<AppointmentController>();
   // final SpaController spaController = Get.find<SpaController>();
@@ -22,20 +24,13 @@ class BottomBarPsycApp extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(10), topLeft: Radius.circular(10)),
         ),
-        // decoration: BoxDecoration(
-        //     // borderRadius: BorderRadius.only(topRight: Radius.circular(0.5)),
-        //     ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             if (selected == "home")
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return HomeScreenConsultant();
-                    },
-                  ));
+                  Get.to(HomeScreenConsultant());
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -48,11 +43,16 @@ class BottomBarPsycApp extends StatelessWidget {
             else
               GestureDetector(
                 // onTap: () => spaController.getSpa(),
+                onTap: () {},
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(onPressed: () {}, icon: Icon(Icons.home))
+                    IconButton(
+                        onPressed: () {
+                          Get.to(HomeScreenConsultant());
+                        },
+                        icon: Icon(Icons.home))
                   ],
                 ),
               ),
@@ -60,18 +60,14 @@ class BottomBarPsycApp extends StatelessWidget {
             if (selected == "appointment")
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return AppointmentScreen();
-                    },
-                  ));
+                  Get.to(AppointmentScreen());
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.calendar_today))
+                        onPressed: () {}, icon: Icon(Icons.calendar_month))
                   ],
                 ),
               )
@@ -83,7 +79,10 @@ class BottomBarPsycApp extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.calendar_month)),
+                        onPressed: () {
+                          Get.to(AppointmentScreen());
+                        },
+                        icon: Icon(Icons.calendar_month)),
                     // Text(
                     //   "Appointment",
                     //   style: TextStyle(fontSize: 12, color: Colors.black45),
@@ -92,14 +91,10 @@ class BottomBarPsycApp extends StatelessWidget {
                 ),
               ),
             //=============================================================SEARCH
-            if (selected == "search")
+            if (selected == "history")
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return AppointmentScreen();
-                    },
-                  ));
+                  Get.to(AppointmentScreen());
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -111,126 +106,49 @@ class BottomBarPsycApp extends StatelessWidget {
               )
             else
               GestureDetector(
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return AppointmentScreen(finished: true);
-                  // },));
-                },
+                // onTap: () => spaController.getSpa(),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(onPressed: () {}, icon: Icon(Icons.history))
+                    IconButton(
+                        onPressed: () {
+                          Get.to(AppointmentScreen());
+                        },
+                        icon: Icon(Icons.history))
                   ],
                 ),
               ),
-            if (selected == "search")
+            if (selected == "profile")
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return AppointmentScreen();
-                    },
-                  ));
+                  Get.to(ProfileConsultantScreen());
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.history),
-                    )
+                        onPressed: () {},
+                        icon: Icon(Icons.manage_accounts_outlined))
                   ],
                 ),
               )
             else
               GestureDetector(
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return AppointmentScreen(finished: true);
-                  // },));
-                },
+                // onTap: () => spaController.getSpa(),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.manage_accounts))
+                        onPressed: () {
+                          Get.to(ProfileConsultantScreen());
+                        },
+                        icon: Icon(Icons.manage_accounts_outlined))
                   ],
                 ),
               ),
-            // //=============================================================TREATMENT
-            // if(selected == "treatment")
-            //   IconButton(
-            //     onPressed: () {
-            //       Navigator.push(context, MaterialPageRoute(
-            //         builder: (context) {
-            //           return MainScreen();
-            //         },
-            //       ));
-            //     },
-            //     icon: Image.asset("assets/icons/treatment.png",color: colorSelected,),
-            //     iconSize: size.width * 0.09,
-            //   )
-            // else
-            //   IconButton(
-            //     onPressed: () {
-            //       Navigator.push(context, MaterialPageRoute(
-            //         builder: (context) {
-            //           return MainScreen();
-            //         },
-            //       ));
-            //     },
-            //     icon: Image.asset("assets/icons/treatment.png", color: colorNormal,),
-            //     iconSize: size.width * 0.09,
-            //   )
-            // ,
-            //=============================================================
-            // if (selected == "Logout")
-            //   GestureDetector(
-            //     onTap: () {
-            //       Navigator.push(context, MaterialPageRoute(
-            //         builder: (context) {
-            //           return MainScreen();
-            //         },
-            //       ));
-            //     },
-            //     child: Column(
-            //       mainAxisSize: MainAxisSize.min,
-            //       crossAxisAlignment: CrossAxisAlignment.center,
-            //       children: [
-            //         Image.asset(
-            //           "assets/icons/profile.png",
-            //           color: Colors.white,
-            //           width: size.width * 0.09,
-            //         ),
-            //         Text(
-            //           "Logout",
-            //           style: TextStyle(fontSize: 12, color: Colors.white),
-            //         )
-            //       ],
-            //     ),
-            //   )
-            // else
-            //   GestureDetector(
-            //     onTap: () => loginController.logout(),
-            //     child: Column(
-            //       mainAxisSize: MainAxisSize.min,
-            //       crossAxisAlignment: CrossAxisAlignment.center,
-            //       children: [
-            //         Image.asset(
-            //           "assets/icons/profile.png",
-            //           color: Colors.black45,
-            //           width: size.width * 0.09,
-            //         ),
-            //         Text(
-            //           "Logout",
-            //           style: TextStyle(fontSize: 12, color: Colors.black45),
-            //         )
-            //       ],
-            //     ),
-            //   )
           ],
         ),
       ),
