@@ -1,7 +1,9 @@
+import 'package:astrology/resourse/consultant/Schedule/schedule_screen.dart';
 import 'package:astrology/resourse/consultant/components/bottombar_consultant.dart';
 import 'package:astrology/resourse/consultant/components/navigation_bottom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:get/get.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -136,7 +138,9 @@ class _BodyState extends State<Body> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(ScheduleScreen());
+                              },
                               icon:
                                   Image.asset("assets/icon/schedule_icon.png"),
                               iconSize: 75,

@@ -55,6 +55,9 @@ dependencies:
   alert: ^2.0.1
   agora_rtc_engine: ^5.3.0
   permission_handler: ^10.0.1
+ 
+  table_calendar: ^3.0.7
+  tiengviet: ^0.5.0
 
 dev_dependencies:
   flutter_test:
