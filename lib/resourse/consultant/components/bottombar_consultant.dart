@@ -1,6 +1,8 @@
 import 'package:astrology/resourse/consultant/Appointment/appointment_screen.dart';
+import 'package:astrology/resourse/consultant/History/history_screen.dart';
 import 'package:astrology/resourse/consultant/Home/home_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
+import 'package:astrology/resourse/consultant/controller/consultant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,18 +13,18 @@ class BottomBarPsycApp extends StatelessWidget {
   BottomBarPsycApp({required this.selected});
   // final AppointmentController appointmentController =
   //     Get.find<AppointmentController>();
-  // final SpaController spaController = Get.find<SpaController>();
+  // final ConsultantController spaController = Get.find<ConsultantController>();
   // final LoginController loginController = Get.find<LoginController>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(top: 5, bottom: 0),
+      padding: EdgeInsets.only(top: 0, bottom: 0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.purple,
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(10), topLeft: Radius.circular(10)),
+              topRight: Radius.circular(1), topLeft: Radius.circular(1)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -94,7 +96,7 @@ class BottomBarPsycApp extends StatelessWidget {
             if (selected == "history")
               GestureDetector(
                 onTap: () {
-                  Get.to(AppointmentScreen());
+                  Get.to(HistoryScreen());
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -113,7 +115,7 @@ class BottomBarPsycApp extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Get.to(AppointmentScreen());
+                          Get.to(HistoryScreen());
                         },
                         icon: Icon(Icons.history))
                   ],

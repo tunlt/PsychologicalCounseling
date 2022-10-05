@@ -1,10 +1,13 @@
+import 'package:astrology/resourse/consultant/History/history_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/Schedule/schedule_screen.dart';
 import 'package:astrology/resourse/consultant/callconsultant/call_screen.dart';
 import 'package:astrology/resourse/consultant/callconsultant/components/bodyCall.dart';
 import 'package:astrology/resourse/consultant/controller/consultant.dart';
+import 'package:astrology/resourse/consultant/controller/login.dart';
 import 'package:astrology/resourse/consultant/controller/register_consultant.dart';
+import 'package:astrology/resourse/consultant/controller/slotbooking.dart';
 import 'package:astrology/resourse/consultant/controller/verifyemail.dart';
 import 'package:get/get.dart';
 
@@ -19,5 +22,8 @@ class Binding implements Bindings {
     Get.lazyPut(() => BodyCall());
     Get.lazyPut(() => ConsultantController());
     Get.lazyPut(() => ScheduleScreen());
+    Get.lazyPut(() => HistoryScreen());
+    Get.lazyPut(() => LoginController());
+    Get.lazyPut(() => SlotbookingController());
   }
 }

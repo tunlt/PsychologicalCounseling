@@ -1,4 +1,6 @@
+import 'package:astrology/resourse/consultant/History/history_screen.dart';
 import 'package:astrology/resourse/consultant/Home/home_screen.dart';
+import 'package:astrology/resourse/consultant/Login/login_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
 import 'package:astrology/resourse/consultant/Profile/profile_screen.dart';
 import 'package:astrology/resourse/consultant/Register/veriify_email.dart';
@@ -19,7 +21,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       // home: RegisterScreen(),
-      initialRoute: "/home_screen",
+      initialRoute: "/login_screen",
       getPages: [
         GetPage(
           name: '/register_screen',
@@ -48,6 +50,14 @@ void main() async {
         GetPage(
             name: '/schedule_screen',
             page: () => ScheduleScreen(),
+            binding: Binding()),
+        GetPage(
+            name: '/history_screen',
+            page: () => HistoryScreen(),
+            binding: Binding()),
+        GetPage(
+            name: '/login_screen',
+            page: () => LoginScreen(),
             binding: Binding()),
       ],
     ),

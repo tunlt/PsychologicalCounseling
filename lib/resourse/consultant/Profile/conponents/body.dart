@@ -1,4 +1,6 @@
 import 'package:astrology/resourse/consultant/Profile/editprofile_screen.dart';
+import 'package:astrology/resourse/consultant/controller/consultant.dart';
+import 'package:astrology/resourse/consultant/controller/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +11,10 @@ class ProfileConsultant extends StatefulWidget {
   State<ProfileConsultant> createState() => _ProfileConsultantState();
 }
 
+final ConsultantController consultantController =
+    Get.find<ConsultantController>();
+final logoutController = Get.find<LoginController>();
+
 class _ProfileConsultantState extends State<ProfileConsultant> {
   @override
   Widget build(BuildContext context) {
@@ -17,11 +23,6 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
         title: Text("Tài khoản của tôi"),
         backgroundColor: Colors.purple[200],
       ),
-      // appBar: AppBar(
-      //   title: Text("Tài khoản của tôi"),
-      //   backgroundColor: Colors.purple[200],
-      //   leading: null,
-      // ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -54,6 +55,7 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                   backgroundColor: Color(0xFFF5F6F9),
                 ),
                 onPressed: () {
+                  consultantController.getConsultantDetail(39);
                   Get.to(EditProfileConsultantScreen());
                 },
                 child: Row(
@@ -139,7 +141,9 @@ class _ProfileConsultantState extends State<ProfileConsultant> {
                       borderRadius: BorderRadius.circular(15)),
                   backgroundColor: Color(0xFFF5F6F9),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  logoutController.logout();
+                },
                 child: Row(
                   children: [
                     Icon(Icons.logout),
